@@ -1,102 +1,65 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+/* Reset global + fond violet nuit profond */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: hsl(240 10% 4%);
+  color: hsl(0 0% 98%);
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
 }
 
-@layer base {
-  :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.809 0.105 251.813);
-    --chart-2: oklch(0.623 0.214 259.815);
-    --chart-3: oklch(0.546 0.245 262.881);
-    --chart-4: oklch(0.488 0.243 264.376);
-    --chart-5: oklch(0.424 0.199 265.638);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-  }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.809 0.105 251.813);
-    --chart-2: oklch(0.623 0.214 259.815);
-    --chart-3: oklch(0.546 0.245 262.881);
-    --chart-4: oklch(0.488 0.243 264.376);
-    --chart-5: oklch(0.424 0.199 265.638);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-  }
-  .theme {
-    --font-sans: 'Geist Variable', sans-serif;
-  }
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+/* Variables ultra-bleu-violet électrique */
+:root {
+  --background: 240 10% 4%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 8%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 8%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 266 90% 65%;          /* violet électrique principal */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 10% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 10% 15%;
+  --muted-foreground: 240 5% 70%;
+  --accent: 266 90% 65%;
+  --accent-foreground: 0 0% 98%;
+  --border: 240 10% 20%;
+  --input: 240 10% 20%;
+  --ring: 266 90% 65%;
+  --radius: 1rem;
+}
+
+/* Glow néon violet + hover boost */
+.shadow-glow {
+  box-shadow: 0 0 25px hsl(266 90% 65% / 0.4);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px hsl(266 90% 65% / 0.7);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px hsl(266 90% 65% / 0.7);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Gradient violet sur textes */
+.gradient-violet {
+  background: linear-gradient(to right, hsl(266 90% 65%), hsl(271 90% 55%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-violet-glow {
+  text-shadow: 0 0 20px hsl(266 90% 65% / 0.8), 0 0 40px hsl(266 90% 65% / 0.5);
 }
